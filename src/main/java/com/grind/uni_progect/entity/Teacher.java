@@ -1,10 +1,7 @@
 package com.grind.uni_progect.entity;
 
 import javax.persistence.*;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
+
 
 @Entity
 public class Teacher {

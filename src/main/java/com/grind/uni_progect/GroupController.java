@@ -1,18 +1,12 @@
 package com.grind.uni_progect;
 
-
-import com.fasterxml.jackson.core.JsonParser;
-import com.google.gson.Gson;
 import com.grind.uni_progect.entity.Teacher;
 import com.grind.uni_progect.entity.UniGroup;
 import com.grind.uni_progect.repositories.GroupRepos;
 import com.grind.uni_progect.repositories.TeacherRepos;
-import org.hibernate.mapping.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 

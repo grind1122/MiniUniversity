@@ -1,8 +1,6 @@
 package com.grind.uni_progect;
 
-import com.grind.uni_progect.entity.Student;
 import com.grind.uni_progect.entity.Teacher;
-import com.grind.uni_progect.entity.UniGroup;
 import com.grind.uni_progect.repositories.GroupRepos;
 import com.grind.uni_progect.repositories.StudRepos;
 import com.grind.uni_progect.repositories.TeacherRepos;
