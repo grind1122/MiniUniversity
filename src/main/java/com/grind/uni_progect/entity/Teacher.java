@@ -15,18 +15,6 @@ public class Teacher {
 
     private String name;
 
-    @OneToMany(mappedBy = "teacher", fetch = FetchType.EAGER)
-    private Collection<UniGroup> uniGroups;
-
-
-    public Collection<UniGroup> getUniGroups() {
-        return uniGroups;
-    }
-
-    public void setUniGroups(Collection<UniGroup> uniGroups) {
-        this.uniGroups = uniGroups;
-    }
-
     public Long getId() {
         return id;
     }

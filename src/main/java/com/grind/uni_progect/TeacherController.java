@@ -1,21 +1,28 @@
 package com.grind.uni_progect;
 
+import com.grind.uni_progect.entity.Student;
 import com.grind.uni_progect.entity.Teacher;
+import com.grind.uni_progect.entity.UniGroup;
+import com.grind.uni_progect.repositories.GroupRepos;
+import com.grind.uni_progect.repositories.StudRepos;
 import com.grind.uni_progect.repositories.TeacherRepos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
+import java.util.*;
 
 @Controller
 @RequestMapping("/teachers")
 public class TeacherController {
     @Autowired
     private TeacherRepos teacherRepos;
+
+    @Autowired
+    private GroupRepos groupRepos;
+
+    @Autowired
+    private StudRepos studRepos;
 
     @GetMapping
     public String getAll(Map<String, Object> model){
@@ -32,4 +39,6 @@ public class TeacherController {
         model.put("teachers", teacherRepos.findAll());
         return "teachers";
     }
+
+
 }

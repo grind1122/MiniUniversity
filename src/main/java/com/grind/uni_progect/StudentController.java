@@ -8,13 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 @RequestMapping("/students")
-public class AppController {
+public class StudentController {
 
     @Autowired
     private StudRepos studRepos;
@@ -71,6 +69,25 @@ public class AppController {
         model.put("groups", groupList);
         model.put("students", list);
         return "main";
+    }
+
+    @GetMapping("/getByGroup")
+    public @ResponseBody
+    List<Student> getAllByGroup(@RequestParam(name = "group") String groupName) {
+        return studRepos.findStudentsByGroupName(groupName);
+    }
+
+    @GetMapping("/getByTeacher")
+    public @ResponseBody List<Student> getStudentsByTeacher(@RequestParam(name = "teacher") String teacherName){
+        List<UniGroup> groupList = groupRepos.findUniGroupsByTeacherName(teacherName);
+        Set<Student> studentSet = new HashSet<>();
+        for(UniGroup group : groupList){
+            List<Student> studentList = studRepos.findStudentsByGroupName(group.getName());
+            studentSet.addAll(studentList);
+        }
+        List<Student> studentList = new ArrayList<>();
+        studentList.addAll(studentSet);
+        return studentList;
     }
 
 }
