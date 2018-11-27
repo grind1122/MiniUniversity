@@ -36,7 +36,7 @@ public class GroupControllerIT {
             for (Student student :list){
                 names.add(student.getName());
             }
-            assertThat(names, containsInAnyOrder("masha","Lolo", "toto", "cucu", "robin"));
+            assertThat(names, containsInAnyOrder("masha","Lolo", "toto", "cucu", "robin")); // This params are names of student in your database
 
     }
 }
