@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Students registration</title>
+    </head>
+    <body>
+        <!--<div>-->
+            <!--<form method="post">-->
+                <!--<input type="text", name="name", placeholder="Введите имя">-->
+                <!--<input type="text", name="age", placeholder="Введите возраст">-->
+                <!--<button type="submit">Добавить</button>-->
+            <!--</form>-->
+            <!--</div>-->
+    <!---->
+        <!--<div>-->
+            <!--<div>Список студентов</div>-->
+            <!--{{#students}}-->
+                <!--<div>-->
+                    <!--<b>{{id}}</b>-->
+                    <!--<span>{{name}}</span>-->
+                    <!--<i>{{age}}</i>-->
+                <!--</div>-->
+                <!--{{/students}}-->
+        <!--</div>-->
+
+        <div>
+            <form method="post">
+                <input type="text", name="name", placeholder="Введите имя">
+                <input type="text", name="age", placeholder="Введите возраст">
+                <input type="text", name="groupName", placeholder="Введите имя группу">
+                <button type="submit">Добавить</button>
+            </form>
+        </div>
+
+        <div>
+            <div>Список студентов</div>
+            {{#students}}
+                <div>
+                    <b>{{id}}</b>
+                    <span>{{name}}</span>
+                    <i>{{age}}</i>
+                </div>
+            {{/students}}
+        </div>
+
+    </body>
+</html>
