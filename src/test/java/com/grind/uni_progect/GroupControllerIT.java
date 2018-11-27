@@ -19,14 +19,12 @@ import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.junit.Assert.*;
 @SpringBootTest
 @RunWith(SpringJUnit4ClassRunner.class)
-
 public class GroupControllerIT {
     RestTemplate restTemplate = new RestTemplate();
 
     @Test
     public void testing() throws Exception{
 
-        try {
             ResponseEntity<List<Student>> responseEntity = restTemplate.exchange("http://localhost:8080/students/getAll", HttpMethod.GET,
                     null, new ParameterizedTypeReference<List<Student>>() {
                     });
@@ -38,9 +36,7 @@ public class GroupControllerIT {
             for (Student student :list){
                 names.add(student.getName());
             }
-            assertThat(names, containsInAnyOrder("masha"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+            assertThat(names, containsInAnyOrder("masha","Lolo", "toto", "cucu", "robin"));
+
     }
 }
