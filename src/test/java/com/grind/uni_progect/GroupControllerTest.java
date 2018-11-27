@@ -1,10 +1,9 @@
 package com.grind.uni_progect;
 
 import com.google.common.collect.ImmutableList;
-import com.grind.uni_progect.entity.Teacher;
+import com.grind.uni_progect.entity.Student;
 import com.grind.uni_progect.entity.UniGroup;
-import com.grind.uni_progect.repositories.GroupRepos;
-import org.junit.Before;
+import com.grind.uni_progect.repositories.StudRepos;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -15,7 +14,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -24,21 +22,22 @@ import static org.mockito.Mockito.when;
 public class GroupControllerTest {
 
     @Mock
-    private GroupRepos groupRepos;
+    private StudRepos studRepos;
 
     @InjectMocks
-    GroupController sut;
+    StudentController sut;
 
     @Test
-    public void getAllByTeacher() {
+    public void getStudentsByGroup() {
 //        prepare
-        String teacherName = "Teacher";
-        when(groupRepos.findUniGroupsByTeacherName(teacherName)).thenReturn(new ArrayList<>());
+        String groupName = "IT";
+        when(studRepos.findStudentsByGroupName(groupName)).thenReturn(new ArrayList<>());
 
 //        testing
-        List<UniGroup> list = sut.getAllByTeacher(teacherName);
+        List<Student> list = sut.getAllByGroup(groupName);
 
 //        validate
-        Mockito.verify(groupRepos, times(1)).findUniGroupsByTeacherName(teacherName);
+        Mockito.verify(studRepos, times(1)).findStudentsByGroupName(groupName);
+
     }
 }
