@@ -13,6 +13,17 @@ public class Student {
     private String name;
     private int age;
 
+    @ManyToOne
+    @JoinColumn(name = "group_id")
+    private UniGroup group;
+
+    public UniGroup getGroup() {
+        return group;
+    }
+
+    public void setGroup(UniGroup group) {
+        this.group = group;
+    }
 
     public Long getId() {
         return id;

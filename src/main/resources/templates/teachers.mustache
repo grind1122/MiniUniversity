@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Students registration</title>
+</head>
+<body>
+<div>
+    <form method="post">
+        <input type="text", name="name", placeholder="Введите имя">
+        <button type="submit">Добавить</button>
+    </form>
+</div>
+
+<div>
+    <div>Список учителей</div>
+    {{#teachers}}
+        <div>
+            <b>{{id}}</b>
+            <span>{{name}}</span>
+        </div>
+    {{/teachers}}
+</div>
+
+</body>
+</html>

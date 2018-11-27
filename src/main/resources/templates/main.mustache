@@ -32,6 +32,15 @@
         </div>
 
         <div>
+            <div>Список групп</div>
+            {{#groups}}
+                <div>
+                    <b>{{id}}</b>
+                    <span>{{name}}</span>
+                </div>
+            {{/groups}}
+        </div>
+        <div>
             <div>Список студентов</div>
             {{#students}}
                 <div>
